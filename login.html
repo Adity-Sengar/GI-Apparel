@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to your GI Apparel account.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Account Sign In | GI Apparel</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="account-page">
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="GI Apparel home">
+        <span class="logo-mark">GI</span>
+        <span class="logo-tag">APPAREL</span>
+      </a>
+      <a href="index.html#catalog" class="account-back-link">Continue shopping</a>
+    </div>
+  </header>
+
+  <main class="account-main">
+    <section class="account-card" aria-labelledby="accountTitle">
+      <div class="account-card-image" role="img" aria-label="GI Apparel summer collection"></div>
+      <div class="account-card-content">
+        <a href="index.html" class="account-eyebrow">GI APPAREL</a>
+        <h1 id="accountTitle">Welcome back</h1>
+        <p class="account-intro">Sign in to your account to continue.</p>
+
+        <form id="loginForm" class="account-form">
+          <label for="loginEmail">Email address</label>
+          <input id="loginEmail" name="email" type="email" autocomplete="email" required>
+
+          <div class="password-label-row">
+            <label for="loginPassword">Password</label>
+            <button id="forgotPasswordBtn" class="text-button" type="button">Forgot password?</button>
+          </div>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+
+          <p id="loginMessage" class="account-message" role="status" aria-live="polite" hidden></p>
+          <button id="loginSubmitBtn" class="account-submit" type="submit">Sign In</button>
+        </form>
+
+        <form id="resetPasswordForm" class="account-form" hidden>
+          <p class="account-intro">Choose a new password for your account.</p>
+          <label for="newPassword">New password</label>
+          <input id="newPassword" name="newPassword" type="password" autocomplete="new-password" minlength="8" required>
+          <label for="confirmPassword">Confirm new password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required>
+          <p id="resetMessage" class="account-message" role="status" aria-live="polite" hidden></p>
+          <button id="resetSubmitBtn" class="account-submit" type="submit">Update Password</button>
+        </form>
+
+        <section id="signedInPanel" class="signed-in-panel" hidden>
+          <p>You’re signed in as</p>
+          <strong id="signedInEmail"></strong>
+          <p id="signedInMessage" class="account-message" role="status" aria-live="polite" hidden></p>
+          <a href="index.html" class="account-submit account-return-link">Continue shopping</a>
+          <button id="signOutBtn" class="text-button sign-out-button" type="button">Sign out</button>
+        </section>
+
+        <p class="account-footnote">Your password is sent securely to Supabase Auth and is never stored by this page.</p>
+        <a href="index.html" class="account-home-link">Back to GI Apparel</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="login.js"></script>
+</body>
+</html>
